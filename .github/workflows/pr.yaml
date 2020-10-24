@@ -1,0 +1,15 @@
+name: PR Comment
+on: issue_comment
+  push:
+     branches:
+      -master
+  pull_requests:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest    
+    steps:
+    - name: see payload
+      run: echo "$PAYLOAD"
+      env:
+        PAYLOAD: ${{ toJSON(github.event) }}
