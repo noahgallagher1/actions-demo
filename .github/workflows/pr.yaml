@@ -10,7 +10,7 @@ jobs:
       env:
         PAYLOAD: ${{ toJSON(github.event) }}
   comment:
-    if: contains(github.event.comment.body, '/zander')
+    if: contains(github.event.comment.body, '/tester')
     runs-on: ubuntu-latest  
     steps:
       - uses: actions/github-script@v3
